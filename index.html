@@ -24,19 +24,24 @@
     const kind = host.dataset.scene;
     const select = q => host.querySelectorAll(q);
     const tl = gsap.timeline({ paused: true, repeat: -1, defaults: { ease: 'power3.inOut', duration: .5 } });
-    const cycle = kind === 'hero' ? 3.5 : 4;
+    const cycle = kind === 'hero' ? 4.5 : 4;
     if (kind === 'hero') {
       const parts=select('.hero-part'),joined=select('.hero-symbol');
-      const offsets=[[-155,65],[0,-70],[155,65]];
+      // Each module travels along the original diagonal into a fixed connection.
+      const offsets=[[-96,79.68],[-96,79.68],[-96,79.68]];
       gsap.set(joined,{opacity:0});
       [...parts].forEach((part,i)=>{
         const [x,y]=offsets[i];
-        gsap.set(part,{x,y,opacity:1});
-        tl.to(part,{x:0,y:0,duration:.55},.15+i*.12);
-        tl.to(part,{x,y,duration:.45},2.65);
+        gsap.set(part,{x,y,opacity:0});
+        tl.to(part,{opacity:1,duration:.08,ease:'none'},.12+i*.18)
+          .to(part,{x:0,y:0,duration:.42,ease:'power2.out'},.12+i*.18);
       });
-      tl.to(joined,{opacity:1,duration:.12},1.05).to(parts,{opacity:0,duration:.12},1.05)
-        .to(parts,{opacity:1,duration:.12},2.5).to(joined,{opacity:0,duration:.12},2.5);
+      // Close the seams only after all three modules have landed.
+      tl.to(joined,{opacity:1,duration:.1,ease:'none'},.92)
+        .to(parts,{opacity:0,duration:.1,ease:'none'},.92);
+      // The assembled mark owns most of the cycle; a brief clear reset avoids
+      // reversing the connection or making the pieces float apart.
+      tl.to(joined,{opacity:0,duration:.18,ease:'power1.in'},4.1);
     } else if (kind === 'montagem') {
       const parts = select('.logo-part'), joined = select('.unified-mark');
       gsap.set(joined,{ opacity: 0 });
