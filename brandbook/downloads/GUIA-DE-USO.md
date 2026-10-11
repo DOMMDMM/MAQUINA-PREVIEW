@@ -6,7 +6,7 @@ Paleta: creme #F1EBDD, preto #1D2019. Fotografias podem trazer cores naturais; n
 
 Assinatura: lettering MAQUINA em contornos; MUSIC identifica a frente. No texto corrido escrever Music Máquina. Proporção da assinatura deve ser preservada. Área mínima proposta: x = 1/4 da altura do símbolo. Tamanho mínimo proposto: símbolo 32 px/8 mm, assinatura 180 px/45 mm; conferir no suporte real.
 
-Tipografia: Urbanist 650 em títulos, DM Sans em leitura, DM Mono em rótulos e dados. Fontes licenciadas sob SIL OFL, incluídas com licenças. Lettering foi ajustado em largura e convertido em contornos.
+Tipografia: Urbanist 650 em títulos, DM Sans em leitura e textos de apoio de publicações, DM Mono em dados técnicos. Alinhamento de textos exclusivamente à esquerda ou à direita; nunca centralizado. Fontes licenciadas sob SIL OFL, incluídas com licenças. Lettering foi ajustado em largura e convertido em contornos.
 
 Shapes: Fluxo, Janela, Encaixe, Painel, Pulso, Ramificação e Acoplamento. Não usar a família simplificada rejeitada. A versão atual mantém os recortes e suaviza levemente os cantos de Fluxo, Janela e Pulso.
 
